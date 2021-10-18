@@ -1,0 +1,5 @@
+https://nuxtjs.org/
+https://github1s.com/dangdinhtai0001/phoenix-nuxt-dashboard/blob/dangdinhtaiv2/assets/global.css
+https://github1s.com/nguyenduclong-ict/nuxt-element-admin/blob/HEAD/package.json
+https://element.eleme.io/#/en-US/component/infiniteScroll
+https://github1s.com/PanJiaChen/vue-element-admin/blob/HEAD/src/layout/index.vue
