@@ -1,3 +1,5 @@
+import components from './settings/components.js';
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -18,16 +20,22 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    'element-ui/lib/theme-chalk/display.css',
+    '~/assets/scss/index.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/router',
+    // custom plugins
+    '@/plugins/plugins.server.js',
+    '@/plugins/plugins.client.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: components,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -38,10 +46,16 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@nuxtjs/svg-sprite'
   ],
 
   styleResources: {
     scss: ['~/assets/scss/variables.scss'],
+  },
+
+  svgSprite: {
+    input: '~/assets/icons/svg',
+    elementClass: 'svg-icon',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

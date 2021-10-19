@@ -4,7 +4,7 @@ import { checkPermission } from '~/utils/router';
 import { sidebarItems } from '@/settings/router'
 
 export const state = () => ({
-    opened: false,
+    opened: true,
 })
 
 export const getters = {
