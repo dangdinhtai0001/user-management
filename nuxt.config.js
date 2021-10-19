@@ -1,4 +1,5 @@
 import components from './settings/components.js';
+import loading from './settings/loading.js';
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -36,6 +37,16 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: components,
+
+  // Custom page loading: https://nuxtjs.org/examples/loading/customize-nuxt-loading
+  loading: loading,
+
+  layoutTransition: {
+    name: 'fade-transform',
+  },
+  pageTransition: {
+    name: 'fade-transform',
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
