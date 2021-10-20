@@ -14,7 +14,7 @@ const components = [
         extensions: ['vue'] // Array, include files that match the extension
     },    
     {
-        path: '~/components/layout/template/',
+        path: '~/components/layout/page/',
         prefix: 'page',
         extensions: ['vue'] // Array, include files that match the extension
     },
