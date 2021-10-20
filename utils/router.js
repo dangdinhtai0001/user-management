@@ -1,7 +1,7 @@
 import _ from '~/utils/external/lodash'
 
 export function createRouter(items, def) {
-    items.forEach((item) => initItem(item, def))
+    items.forEach((item) => initItem(item, def));
     return items
 }
 

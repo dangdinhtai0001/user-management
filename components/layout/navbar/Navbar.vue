@@ -10,25 +10,24 @@
       <breadcrumb />
 
       <right-menu :items="rightMenu" />
-      <span class="nav-button float-right" @click="toggleFullscreen">
+      <!-- <span class="nav-button float-right" @click="toggleFullscreen">
         <icon :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'" />
-      </span>
-      <a
-        href="https://github.com/nguyenduclong-ict/nuxt-element-admin"
-        class="nav-button float-right"
-        target="_blank"
-      >
-        <icon name="github" />
-      </a>
+      </span> -->
+
+      <div class="m-1 float-right">
+        <el-button  circle @click="toggleFullscreen">
+          <icon :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'" />
+        </el-button>
+      </div>
     </div>
     <TagsView v-if="_hasTagView" />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { TOGGLE_SIDEBAR } from '@/store/sidebar'
-import { get, isNil } from '~/utils/external/lodash'
+import { mapState } from "vuex";
+import { TOGGLE_SIDEBAR } from "@/store/sidebar";
+import { get, isNil } from "~/utils/external/lodash";
 export default {
   props: {
     hasTagsView: Boolean,
@@ -36,78 +35,78 @@ export default {
   data() {
     return {
       isFullscreen: false,
-    }
+    };
   },
   computed: {
-    ...mapState(['sidebar', 'navbar', 'app']),
+    ...mapState(["sidebar", "navbar", "app"]),
     _hasTagView() {
       if (!isNil(this.hasTagsView)) {
-        return this.hasTagsView
+        return this.hasTagsView;
       }
-      return this.app.tagsView
+      return this.app.tagsView;
     },
     rightMenu() {
       return [
         {
           text:
-            get(this.$auth, 'user.info.name') ||
-            get(this.$auth, 'user.username') ||
-            get(this.$auth, 'user.email'),
+            get(this.$auth, "user.info.name") ||
+            get(this.$auth, "user.username") ||
+            get(this.$auth, "user.email"),
         },
-        { text: 'Logout', click: this.logout, divided: true },
-      ]
+        { text: "Logout", click: this.logout, divided: true },
+      ];
     },
   },
   methods: {
     toggleSideBar() {
-      this.$store.commit('sidebar/' + TOGGLE_SIDEBAR)
+      this.$store.commit("sidebar/" + TOGGLE_SIDEBAR);
     },
     logout() {
-      this.$auth.logout()
+      this.$auth.logout();
     },
     itemClick(handle) {
-      if (handle) handle()
+      if (handle) handle();
     },
     toggleFullscreen() {
       if (this.isFullscreen) {
-        this.closeFullscreen()
+        this.closeFullscreen();
       } else {
-        this.openFullscreen()
+        this.openFullscreen();
       }
     },
     openFullscreen() {
-      const elem = document.documentElement
+      const elem = document.documentElement;
       if (elem.requestFullscreen) {
-        elem.requestFullscreen()
+        elem.requestFullscreen();
       } else if (elem.mozRequestFullScreen) {
         /* Firefox */
-        elem.mozRequestFullScreen()
+        elem.mozRequestFullScreen();
       } else if (elem.webkitRequestFullscreen) {
         /* Chrome, Safari and Opera */
-        elem.webkitRequestFullscreen()
+        elem.webkitRequestFullscreen();
       } else if (elem.msRequestFullscreen) {
         /* IE/Edge */
-        elem.msRequestFullscreen()
+        elem.msRequestFullscreen();
       }
-      this.isFullscreen = true
+      this.isFullscreen = true;
     },
     closeFullscreen() {
       if (document.exitFullscreen) {
-        document.exitFullscreen()
+        document.exitFullscreen();
       } else if (document.mozCancelFullScreen) {
         /* Firefox */
-        document.mozCancelFullScreen()
+        document.mozCancelFullScreen();
       } else if (document.webkitExitFullscreen) {
         /* Chrome, Safari and Opera */
-        document.webkitExitFullscreen()
+        document.webkitExitFullscreen();
       } else if (document.msExitFullscreen) {
         /* IE/Edge */
-        document.msExitFullscreen()
+        document.msExitFullscreen();
       }
-      this.isFullscreen = false
+      this.isFullscreen = false;
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
@@ -155,7 +154,7 @@ export default {
     transition: background 0.3s;
     -webkit-tap-highlight-color: transparent;
 
-    [class*='-icon'] {
+    [class*="-icon"] {
       font-size: 20px;
     }
     &:hover {

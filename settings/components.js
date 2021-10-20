@@ -12,6 +12,11 @@ const components = [
     {
         path: '~/components/layout/sidebar/',
         extensions: ['vue'] // Array, include files that match the extension
+    },    
+    {
+        path: '~/components/layout/template/',
+        prefix: 'page',
+        extensions: ['vue'] // Array, include files that match the extension
     },
     {
         path: '~/components/',

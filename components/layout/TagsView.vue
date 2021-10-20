@@ -18,46 +18,46 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import { REMOVE_ROUTE } from '@/store/router'
-import { routes } from '~/settings/router'
+import { mapState } from "vuex";
+import { REMOVE_ROUTE } from "@/store/router";
+import { routes } from "~/settings/router";
 export default {
   computed: {
-    ...mapState('router', ['history', 'current']),
+    ...mapState("router", ["history", "current"]),
     tagViews() {
-      const result = routes.filter((item) => item.pined)
+      const result = routes.filter((item) => item.pined);
       this.history.forEach((h) => {
         if (!result.find((item) => item.path === h.path)) {
           if (h.pined) {
-            result.unshift(h)
+            result.unshift(h);
           } else {
-            result.push(h)
+            result.push(h);
           }
         }
-      })
-      return result
+      });
+      return result;
     },
   },
   methods: {
     handleClick(route) {
-      this.$router.push(route)
+      this.$router.push(route);
     },
     handleClose(route, index) {
       if (this.history.length === 1) {
-        return
+        return;
       }
-      this.$store.commit(`router/${REMOVE_ROUTE}`, route)
-      console.log(route)
+      this.$store.commit(`router/${REMOVE_ROUTE}`, route);
+      console.log(route);
       if (route.path === this.current.path) {
         if (this.history.findIndex((r) => r.path === route.pre.path) >= 0) {
-          this.$router.back()
+          this.$router.back();
         } else {
-          this.$router.push(this.history[index - 1])
+          this.$router.push(this.history[index - 1]);
         }
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
@@ -90,7 +90,7 @@ export default {
 
   .tags-view-item.el-tag.active {
     &::before {
-      content: '';
+      content: "";
       background: #fff;
       display: inline-block;
       width: 8px;

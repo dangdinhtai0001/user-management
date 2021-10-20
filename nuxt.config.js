@@ -1,5 +1,7 @@
 import components from './settings/components.js';
 import loading from './settings/loading.js';
+import tailwind from './settings/tailwind.js';
+import axios from './settings/axios.js';
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -24,6 +26,7 @@ export default {
     'element-ui/lib/theme-chalk/index.css',
     'element-ui/lib/theme-chalk/display.css',
     '~/assets/scss/index.scss',
+    '~/assets/css/tailwind.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -50,6 +53,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    //https://tailwindcss.nuxtjs.org/
+    ['@nuxtjs/tailwindcss', { tailwind }],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -70,7 +75,7 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: axios,
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
