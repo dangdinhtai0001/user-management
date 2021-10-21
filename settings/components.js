@@ -12,10 +12,15 @@ const components = [
     {
         path: '~/components/layout/sidebar/',
         extensions: ['vue'] // Array, include files that match the extension
-    },    
+    },
     {
         path: '~/components/layout/page/',
         prefix: 'page',
+        extensions: ['vue'] // Array, include files that match the extension
+    },
+    {
+        path: '~/components/layout/card/',
+        prefix: 'card',
         extensions: ['vue'] // Array, include files that match the extension
     },
     {

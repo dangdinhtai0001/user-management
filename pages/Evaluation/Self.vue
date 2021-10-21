@@ -16,7 +16,9 @@
       <!-- ========================= content-0 ========================= -->
       <!-- ========================= content-1 ========================= -->
       <template v-slot:content-1>
-        <div>content-1</div>
+        <div>
+          <card-profile> </card-profile>
+        </div>
       </template>
       <!-- ========================= content-1 ========================= -->
     </page-default>

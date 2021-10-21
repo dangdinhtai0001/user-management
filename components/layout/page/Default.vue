@@ -8,7 +8,7 @@
       <!-- ----------------------- title slot -----------------------  -->
       <div class="my-2"></div>
       <!-- ----------------------- filter slot -----------------------  -->
-      <el-card class="box-card">
+      <el-card class="box-card" shadow="never">
         <slot name="filter"> </slot>
       </el-card>
       <!-- ----------------------- filter slot -----------------------  -->
@@ -16,7 +16,7 @@
       <!-- ----------------------- content slot -----------------------  -->
       <el-row :gutter="10">
         <el-col v-for="(col, i) in data.contents" :key="i" :span="col.span">
-          <el-card class="box-card">
+          <el-card class="box-card" shadow="never">
             <slot :name="`content-` + i"> </slot>
           </el-card>
         </el-col>
