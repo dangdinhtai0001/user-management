@@ -14,9 +14,13 @@
       <!-- ----------------------- filter slot -----------------------  -->
       <div class="my-2"></div>
       <!-- ----------------------- content slot -----------------------  -->
-      <el-card class="box-card">
-        <slot name="content"></slot>
-      </el-card>
+      <el-row :gutter="10">
+        <el-col v-for="(col, i) in data.contents" :key="i" :span="col.span">
+          <el-card class="box-card">
+            <slot :name="`content-` + i"> </slot>
+          </el-card>
+        </el-col>
+      </el-row>
       <!-- ----------------------- content slot -----------------------  -->
     </div>
     <!-- ---------------------------------------------- dialog slot ----------------------------------------------  -->
@@ -32,10 +36,11 @@
 
 <script>
 export default {
+  name: "page-default",
   props: {
     data: {
       type: Object,
-      required: false,
+      required: true,
     },
   },
 };
