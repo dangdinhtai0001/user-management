@@ -17,15 +17,15 @@ export const routes = createRouter([
     sidebar: true,
   },
   {
-    id: '/transaction',
-    title: 'Giao dịch',
+    id: '/evaluation',
+    title: 'Đánh giá',
     icon: 'chart',
     sidebar: true,
     children: [
       {
-        title: 'Nạp thay',
+        title: 'Tự đánh giá',
         icon: 'user',
-        path: '/transaction/charge',
+        path: '/evaluation/self',
       }
     ],
   },

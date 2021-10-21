@@ -11,11 +11,8 @@
         :collapse-transition="false"
         mode="vertical"
       >
-        <sidebar-item
-          v-for="item in items"
-          :key="item.key"
-          :item="item"
-        ></sidebar-item>
+        <sidebar-item v-for="item in items" :key="item.key" :item="item">
+        </sidebar-item>
       </el-menu>
     </el-scrollbar>
     <div class="mask" @click="closeSidebar"></div>
