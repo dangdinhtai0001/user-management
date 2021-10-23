@@ -27,6 +27,7 @@ export default {
     'element-ui/lib/theme-chalk/display.css',
     '~/assets/scss/index.scss',
     '~/assets/css/tailwind.css',
+    '~/assets/css/index.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

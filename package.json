@@ -19,6 +19,7 @@
     "lodash": "^4.17.21",
     "node-sass": "^6.0.1",
     "nuxt": "^2.15.7",
+    "perfect-scrollbar": "^1.5.2",
     "postcss": "^8.3.9",
     "sass-loader": "10",
     "tailwindcss": "^2.2.17",

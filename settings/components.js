@@ -19,7 +19,7 @@ const components = [
         extensions: ['vue'] // Array, include files that match the extension
     },
     {
-        path: '~/components/layout/card/',
+        path: '~/components/card/',
         prefix: 'card',
         extensions: ['vue'] // Array, include files that match the extension
     },

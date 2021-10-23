@@ -24,62 +24,61 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import variables from '~/utils/variables'
+import { mapState } from "vuex";
+import variables from "~/utils/variables";
 
 export default {
-   props: {
+  props: {
     hasTagsView: {
       type: Boolean,
       default: undefined,
-    },  },
-     data() {
+    },
+  },
+  data() {
     return {
       navbarHeight: 0,
       variables,
-    }
+    };
   },
   computed: {
-    ...mapState(['sidebar', 'navbar', 'app']),
+    ...mapState(["sidebar", "navbar", "app"]),
     paddingTop() {
       if (!this.navbar.fixed) {
-        return '0px'
+        return "0px";
       }
       if (process.server) {
         const hasTagsView =
-          this.hasTagsView !== undefined ? this.hasTagsView : this.app.tagsView
+          this.hasTagsView !== undefined ? this.hasTagsView : this.app.tagsView;
         if (hasTagsView) {
-          return '82px'
+          return "82px";
         }
-        return '50px'
+        return "50px";
       }
-      return this.navbarHeight + 'px'
+      return this.navbarHeight + "px";
     },
     collapsed() {
-      return !this.$store.state.sidebar.opened
+      return !this.$store.state.sidebar.opened;
     },
   },
   mounted() {
     this.navbarHeight = this.$refs.navbar.$el.clientHeight;
-
   },
   created() {
     this.$watch(
       () => {
-        return [this.navbar.fixed, this.app.tagsView]
+        return [this.navbar.fixed, this.app.tagsView];
       },
       (v) => {
         if (!process.server) {
           this.$nextTick(() => {
-            this.navbarHeight = this.$refs.navbar?.$el.clientHeight
-          })
+            this.navbarHeight = this.$refs.navbar?.$el.clientHeight;
+          });
         }
       },
       { immediate: true }
-    )
+    );
   },
-  
-}
+};
 </script>
 
 <style lang="scss">

@@ -1,0 +1,96 @@
+{
+  "uuid": "900aef88-cc3e-40a6-b339-dbd55889dc5c",
+  "lastMigration": 18,
+  "name": "user-management",
+  "endpointPrefix": "api/v0",
+  "latency": 0,
+  "port": 8091,
+  "hostname": "127.0.0.1",
+  "routes": [
+    {
+      "uuid": "e3ddd821-2a86-4e40-8ccf-d4e2cee4b6c7",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "user/all",
+      "responses": [
+        {
+          "uuid": "a636a813-f851-408c-a31c-b3ef252a1721",
+          "body": "[\r\n  {\r\n    \"id\": \"617467394889706ffb61f8f4\",\r\n    \"fullname\": \"Gould Shannon\",\r\n    \"department\": \"KNEEDLES\",\r\n    \"selfSalary\": 17060334,\r\n    \"salary\": 18923539\r\n  },\r\n  {\r\n    \"id\": \"6174673983608f78baf8e0ed\",\r\n    \"fullname\": \"King Abbott\",\r\n    \"department\": \"PERMADYNE\",\r\n    \"selfSalary\": 10212768,\r\n    \"salary\": 11801247\r\n  },\r\n  {\r\n    \"id\": \"6174673934d1f4eb3ccd60b3\",\r\n    \"fullname\": \"Grimes Wilder\",\r\n    \"department\": \"VIRXO\",\r\n    \"selfSalary\": 8470283,\r\n    \"salary\": 17638148\r\n  },\r\n  {\r\n    \"id\": \"61746739697f33e5dd6590bc\",\r\n    \"fullname\": \"Denise Hahn\",\r\n    \"department\": \"HATOLOGY\",\r\n    \"selfSalary\": 17253914,\r\n    \"salary\": 15211362\r\n  },\r\n  {\r\n    \"id\": \"617467393e68725981c5917a\",\r\n    \"fullname\": \"Wilder Farley\",\r\n    \"department\": \"ZEPITOPE\",\r\n    \"selfSalary\": 14596948,\r\n    \"salary\": 13980005\r\n  },\r\n  {\r\n    \"id\": \"61746739b5dfdb328b8b05de\",\r\n    \"fullname\": \"Ofelia Gallagher\",\r\n    \"department\": \"BRISTO\",\r\n    \"selfSalary\": 15667061,\r\n    \"salary\": 7741415\r\n  },\r\n  {\r\n    \"id\": \"61746739cd6948f3af2392ae\",\r\n    \"fullname\": \"Harris Castillo\",\r\n    \"department\": \"TETAK\",\r\n    \"selfSalary\": 16519035,\r\n    \"salary\": 13787135\r\n  },\r\n  {\r\n    \"id\": \"6174673987a1937c76fe848a\",\r\n    \"fullname\": \"Leann Mcpherson\",\r\n    \"department\": \"DOGNOSIS\",\r\n    \"selfSalary\": 8013352,\r\n    \"salary\": 18645533\r\n  },\r\n  {\r\n    \"id\": \"6174673967d4f71b430ebc7a\",\r\n    \"fullname\": \"Solis Campbell\",\r\n    \"department\": \"MANTRO\",\r\n    \"selfSalary\": 18124827,\r\n    \"salary\": 15652450\r\n  },\r\n  {\r\n    \"id\": \"61746739128b453ca7315df4\",\r\n    \"fullname\": \"Yolanda Davenport\",\r\n    \"department\": \"ENDIPIN\",\r\n    \"selfSalary\": 14958735,\r\n    \"salary\": 19486594\r\n  },\r\n  {\r\n    \"id\": \"61746739481f494cc45733ab\",\r\n    \"fullname\": \"Phillips Anderson\",\r\n    \"department\": \"RONBERT\",\r\n    \"selfSalary\": 15679133,\r\n    \"salary\": 11892336\r\n  },\r\n  {\r\n    \"id\": \"61746739c7e48f11da8ca075\",\r\n    \"fullname\": \"Floyd Holmes\",\r\n    \"department\": \"RODEOCEAN\",\r\n    \"selfSalary\": 17420458,\r\n    \"salary\": 19349955\r\n  },\r\n  {\r\n    \"id\": \"61746739a27f25b46e0d5fe6\",\r\n    \"fullname\": \"Mavis Sullivan\",\r\n    \"department\": \"ZORK\",\r\n    \"selfSalary\": 9550850,\r\n    \"salary\": 16323169\r\n  },\r\n  {\r\n    \"id\": \"61746739e5f037b146fecabf\",\r\n    \"fullname\": \"Angelica Baker\",\r\n    \"department\": \"EPLODE\",\r\n    \"selfSalary\": 8572629,\r\n    \"salary\": 13925917\r\n  },\r\n  {\r\n    \"id\": \"61746739a548b38964bd3e17\",\r\n    \"fullname\": \"Ginger Snow\",\r\n    \"department\": \"ICOLOGY\",\r\n    \"selfSalary\": 14340883,\r\n    \"salary\": 9663847\r\n  },\r\n  {\r\n    \"id\": \"6174673941da45b6189c1ac6\",\r\n    \"fullname\": \"Elinor Jordan\",\r\n    \"department\": \"DANJA\",\r\n    \"selfSalary\": 11747770,\r\n    \"salary\": 7909602\r\n  },\r\n  {\r\n    \"id\": \"61746739d8a4fbfbb6291752\",\r\n    \"fullname\": \"Kramer Bowen\",\r\n    \"department\": \"RETRACK\",\r\n    \"selfSalary\": 7644640,\r\n    \"salary\": 14383862\r\n  },\r\n  {\r\n    \"id\": \"61746739b292f085bb86270f\",\r\n    \"fullname\": \"Corina Cunningham\",\r\n    \"department\": \"BULLJUICE\",\r\n    \"selfSalary\": 16126670,\r\n    \"salary\": 15375236\r\n  },\r\n  {\r\n    \"id\": \"617467391761ad70240cd324\",\r\n    \"fullname\": \"Francis Walter\",\r\n    \"department\": \"MOREGANIC\",\r\n    \"selfSalary\": 18589008,\r\n    \"salary\": 10418869\r\n  },\r\n  {\r\n    \"id\": \"61746739c344c90d8da07402\",\r\n    \"fullname\": \"Muriel Dyer\",\r\n    \"department\": \"ZILENCIO\",\r\n    \"selfSalary\": 12176661,\r\n    \"salary\": 16657032\r\n  },\r\n  {\r\n    \"id\": \"61746739ed0a67f9798f8b04\",\r\n    \"fullname\": \"Helen Carpenter\",\r\n    \"department\": \"COMTOURS\",\r\n    \"selfSalary\": 8866997,\r\n    \"salary\": 15863471\r\n  },\r\n  {\r\n    \"id\": \"6174673935b7e9e5c686db72\",\r\n    \"fullname\": \"Baxter Oconnor\",\r\n    \"department\": \"ZENTIX\",\r\n    \"selfSalary\": 9250002,\r\n    \"salary\": 13886287\r\n  },\r\n  {\r\n    \"id\": \"617467393d9c61a9daec663e\",\r\n    \"fullname\": \"Misty Gray\",\r\n    \"department\": \"FLUM\",\r\n    \"selfSalary\": 16685343,\r\n    \"salary\": 14933224\r\n  },\r\n  {\r\n    \"id\": \"61746739459e8401a1c9b48f\",\r\n    \"fullname\": \"Earnestine Woods\",\r\n    \"department\": \"ZILLADYNE\",\r\n    \"selfSalary\": 8274104,\r\n    \"salary\": 14538685\r\n  },\r\n  {\r\n    \"id\": \"617467396601fa68c89dcc3e\",\r\n    \"fullname\": \"Melisa Grant\",\r\n    \"department\": \"PIGZART\",\r\n    \"selfSalary\": 10541164,\r\n    \"salary\": 9819241\r\n  },\r\n  {\r\n    \"id\": \"61746739ed28f8ac81bb80c7\",\r\n    \"fullname\": \"Crane Harper\",\r\n    \"department\": \"PROFLEX\",\r\n    \"selfSalary\": 8242743,\r\n    \"salary\": 19605065\r\n  },\r\n  {\r\n    \"id\": \"61746739ae216ce8a2e5039b\",\r\n    \"fullname\": \"Turner Reid\",\r\n    \"department\": \"CENTICE\",\r\n    \"selfSalary\": 14778580,\r\n    \"salary\": 12963201\r\n  },\r\n  {\r\n    \"id\": \"61746739091341112963ff46\",\r\n    \"fullname\": \"Karla Flores\",\r\n    \"department\": \"XIXAN\",\r\n    \"selfSalary\": 11406589,\r\n    \"salary\": 19141947\r\n  },\r\n  {\r\n    \"id\": \"61746739608e86aaaec46c87\",\r\n    \"fullname\": \"Brock Cannon\",\r\n    \"department\": \"SLAMBDA\",\r\n    \"selfSalary\": 7823978,\r\n    \"salary\": 14361978\r\n  },\r\n  {\r\n    \"id\": \"617467390bad76f666b27276\",\r\n    \"fullname\": \"Concepcion Pratt\",\r\n    \"department\": \"MEDESIGN\",\r\n    \"selfSalary\": 10084222,\r\n    \"salary\": 15230161\r\n  },\r\n  {\r\n    \"id\": \"61746739453e8522a7a6dce9\",\r\n    \"fullname\": \"Maddox Berger\",\r\n    \"department\": \"ACLIMA\",\r\n    \"selfSalary\": 16879352,\r\n    \"salary\": 16147146\r\n  },\r\n  {\r\n    \"id\": \"6174673986b500e6cfd52474\",\r\n    \"fullname\": \"Neva Le\",\r\n    \"department\": \"PYRAMI\",\r\n    \"selfSalary\": 11215729,\r\n    \"salary\": 18099719\r\n  },\r\n  {\r\n    \"id\": \"617467390b573e1be766880e\",\r\n    \"fullname\": \"Andrews Ferguson\",\r\n    \"department\": \"ZIDOX\",\r\n    \"selfSalary\": 14017683,\r\n    \"salary\": 9925839\r\n  },\r\n  {\r\n    \"id\": \"61746739764526b3dde7c22c\",\r\n    \"fullname\": \"Lamb Bell\",\r\n    \"department\": \"ASSURITY\",\r\n    \"selfSalary\": 17749665,\r\n    \"salary\": 7583522\r\n  },\r\n  {\r\n    \"id\": \"61746739481fce44afafbfa6\",\r\n    \"fullname\": \"Deana Norris\",\r\n    \"department\": \"AQUAZURE\",\r\n    \"selfSalary\": 14196533,\r\n    \"salary\": 15765212\r\n  },\r\n  {\r\n    \"id\": \"617467393874f3a1469438ff\",\r\n    \"fullname\": \"Bishop Hicks\",\r\n    \"department\": \"EXOSPEED\",\r\n    \"selfSalary\": 15645688,\r\n    \"salary\": 16981223\r\n  },\r\n  {\r\n    \"id\": \"61746739ba735deb33cc0424\",\r\n    \"fullname\": \"Silva Moreno\",\r\n    \"department\": \"APPLICA\",\r\n    \"selfSalary\": 8523852,\r\n    \"salary\": 13747915\r\n  },\r\n  {\r\n    \"id\": \"61746739898f326d00675ad5\",\r\n    \"fullname\": \"Judy Brewer\",\r\n    \"department\": \"OBONES\",\r\n    \"selfSalary\": 16559836,\r\n    \"salary\": 16824716\r\n  },\r\n  {\r\n    \"id\": \"61746739c3af4179a3648945\",\r\n    \"fullname\": \"Fleming Boyer\",\r\n    \"department\": \"ZILCH\",\r\n    \"selfSalary\": 14202281,\r\n    \"salary\": 8975229\r\n  },\r\n  {\r\n    \"id\": \"617467393241eb4b460acefe\",\r\n    \"fullname\": \"Nunez Shaw\",\r\n    \"department\": \"NEUROCELL\",\r\n    \"selfSalary\": 15110978,\r\n    \"salary\": 12824192\r\n  },\r\n  {\r\n    \"id\": \"61746739283ca46d852f4031\",\r\n    \"fullname\": \"Nora Graves\",\r\n    \"department\": \"CRUSTATIA\",\r\n    \"selfSalary\": 19713347,\r\n    \"salary\": 7853226\r\n  },\r\n  {\r\n    \"id\": \"6174673967253b7105ede3cb\",\r\n    \"fullname\": \"Debra Valentine\",\r\n    \"department\": \"IRACK\",\r\n    \"selfSalary\": 19030656,\r\n    \"salary\": 18308868\r\n  },\r\n  {\r\n    \"id\": \"617467394b8815aa068f7656\",\r\n    \"fullname\": \"Ferrell Burks\",\r\n    \"department\": \"ASSITIA\",\r\n    \"selfSalary\": 14160289,\r\n    \"salary\": 11590332\r\n  },\r\n  {\r\n    \"id\": \"6174673981a64f6668b94af3\",\r\n    \"fullname\": \"Noelle Underwood\",\r\n    \"department\": \"ASIMILINE\",\r\n    \"selfSalary\": 16959226,\r\n    \"salary\": 12332359\r\n  },\r\n  {\r\n    \"id\": \"61746739ecbbb8d88a80cf1c\",\r\n    \"fullname\": \"Mary Britt\",\r\n    \"department\": \"ADORNICA\",\r\n    \"selfSalary\": 15953668,\r\n    \"salary\": 9989380\r\n  },\r\n  {\r\n    \"id\": \"61746739e286eae3d7f2ecbb\",\r\n    \"fullname\": \"Perkins Estrada\",\r\n    \"department\": \"ORGANICA\",\r\n    \"selfSalary\": 11865858,\r\n    \"salary\": 9106778\r\n  },\r\n  {\r\n    \"id\": \"6174673902af2f8196571c0e\",\r\n    \"fullname\": \"Fisher Shepard\",\r\n    \"department\": \"FANGOLD\",\r\n    \"selfSalary\": 7703067,\r\n    \"salary\": 18707207\r\n  },\r\n  {\r\n    \"id\": \"6174673924ab1371015658a8\",\r\n    \"fullname\": \"Cox Dunn\",\r\n    \"department\": \"HONOTRON\",\r\n    \"selfSalary\": 18685349,\r\n    \"salary\": 16517963\r\n  },\r\n  {\r\n    \"id\": \"617467391335e65dbbf1fac8\",\r\n    \"fullname\": \"Cardenas Morales\",\r\n    \"department\": \"DATACATOR\",\r\n    \"selfSalary\": 16941238,\r\n    \"salary\": 13250448\r\n  },\r\n  {\r\n    \"id\": \"61746739328c27db5fe2648d\",\r\n    \"fullname\": \"Kris Velazquez\",\r\n    \"department\": \"TELLIFLY\",\r\n    \"selfSalary\": 7324460,\r\n    \"salary\": 10981101\r\n  }\r\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "94e10322-6717-4203-9e47-747b3a0e37df",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "user",
+      "responses": [
+        {
+          "uuid": "7d8298df-03f5-464d-bd2e-3d1d9d707f9c",
+          "body": "{\r\n  \"id\": \"617479ce4996ce989d4deed6\",\r\n  \"avatar\": \"https://source.unsplash.com/user/erondu/1600x900\",\r\n  \"fullname\": \"Le Riley\",\r\n  \"department\": \"JETSILK\",\r\n  \"selfSalary\": 8596774,\r\n  \"salary\": 14921937\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "https": false,
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept,Authorization,Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
