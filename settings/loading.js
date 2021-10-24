@@ -1,11 +1,12 @@
+
 export default {
     /*
      ** modifying the default loader
      */
-    loading: {
-        color: 'DodgerBlue',
-        height: '10px',
-        continuous: true,
-        duration: 3000
-    }
+
+    color: '#409eff',
+    height: '2px',
+    continuous: true,
+    duration: 3000
+
 }
