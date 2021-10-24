@@ -28,6 +28,23 @@
             >
             </el-table-column>
           </el-table>
+
+          <!-- ---------------------- -->
+          <div class="my-2"></div>
+          <!-- ---------------------- -->
+
+          <div class="flex justify-center ...">
+            <el-pagination
+              layout="prev, pager, next"
+              :pager-count="5"
+              :total="pagination.total"
+              :total-page-count="pagination.totalPageCount"
+              :page-size="pagination.pageSize"
+              :current-page="pagination.currentPage"
+              background
+            >
+            </el-pagination>
+          </div>
         </div>
       </template>
       <!-- ========================= content-0 ========================= -->
@@ -78,6 +95,12 @@ export default {
   data: () => ({
     tableData: [],
     tableCols: [],
+    pagination: {
+      total: null,
+      pageSize: null,
+      totalPageCount: null,
+      currentPage: null,
+    },
     pageData: {
       dialog: {
         title: null,
@@ -141,12 +164,17 @@ export default {
     },
 
     async initTableData() {
-      let data = [];
-      await this.$axios.$get("/user/all").then(function (response) {
-        data = response;
+      let response = {};
+      await this.$axios.$get("/user/all").then(function (_response) {
+        response = _response;
       });
 
-      this.tableData = [...data];
+      this.tableData = [...response.data];
+
+      this.pagination.total = response.total;
+      this.pagination.pageSize = response.pageSize;
+      this.pagination.totalPageCount = response.totalPageCount;
+      this.pagination.currentPage = response.currentPage;
     },
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
