@@ -40,7 +40,7 @@
       "responses": [
         {
           "uuid": "7d8298df-03f5-464d-bd2e-3d1d9d707f9c",
-          "body": "{\r\n  \"id\": \"617479ce4996ce989d4deed6\",\r\n  \"avatar\": \"https://source.unsplash.com/user/erondu/1600x900\",\r\n  \"fullname\": \"Le Riley\",\r\n  \"department\": \"JETSILK\",\r\n  \"selfSalary\": 8596774,\r\n  \"salary\": 14921937\r\n}",
+          "body": "{\r\n  \"id\": \"617479ce4996ce989d4deed6\",\r\n  \"avatar\": \"https://source.unsplash.com/user/erondu/1600x900\",\r\n  \"fullname\": \"Le Riley\",\r\n  \"department\": \"JETSILK\",\r\n  \"selfSalary\": 8596774,\r\n  \"salary\": 14921937,\r\n  \"review\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\"\r\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",

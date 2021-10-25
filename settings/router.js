@@ -23,6 +23,11 @@ export const routes = createRouter([
     sidebar: true,
     children: [
       {
+        title: 'Đánh giá chung',
+        icon: 'el-icon-platform-eleme',
+        path: '/evaluation/review',
+      },
+      {
         title: 'Tự đánh giá',
         icon: 'user',
         path: '/evaluation/self',

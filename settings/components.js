@@ -25,6 +25,7 @@ const components = [
     },
     {
         path: '~/components/',
+        prefix: 'default',
         extensions: ['vue'] // Array, include files that match the extension
     },
 ]

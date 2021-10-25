@@ -3,7 +3,7 @@
     <el-menu-item :index="item.path" @click="handleClick">
       <div class="flex items-stretch justify-start pl-0.5">
         <div class="self-center mr-1">
-          <icon v-if="item.icon" :name="item.icon" />
+          <default-icon v-if="item.icon" :name="item.icon" />
         </div>
         <div class="self-center truncate" slot="title">{{ item.title }}</div>
       </div>
@@ -13,7 +13,7 @@
     <template slot="title">
       <div class="flex items-stretch justify-start pl-0.5">
         <div class="self-center mr-1">
-          <icon v-if="item.icon" :name="item.icon" />
+          <default-icon v-if="item.icon" :name="item.icon" />
         </div>
         <div class="self-center truncate" slot="title">{{ item.title }}</div>
       </div>

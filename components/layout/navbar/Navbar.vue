@@ -16,7 +16,7 @@
 
       <div class="m-1 float-right">
         <el-button  circle @click="toggleFullscreen">
-          <icon :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'" />
+          <default-icon :name="isFullscreen ? 'exit-fullscreen' : 'fullscreen'" />
         </el-button>
       </div>
     </div>
