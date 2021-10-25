@@ -1,7 +1,5 @@
 <template>
   <div>
-          {{isEmptyProfile()}}
-      {{currentUser}}
     <page-default :config="templateConfig">
       <!-- ========================= title ========================= -->
       <template v-slot:title>
@@ -35,7 +33,7 @@
       <!-- ========================= content-1 ========================= -->
       <template v-slot:content-1>
         <div>
-          <card-profile :isEmpty="isEmptyProfile">
+          <card-profile :isEmpty="isEmptyProfile()">
             <!-- ------- avatar ------- -->
             <template v-slot:avatar>
               <el-avatar :size="200">
@@ -70,14 +68,11 @@
               <!-- ------ -->
 
               <el-divider content-position="left">Đánh giá</el-divider>
+                  {{ currentUser.review }}
 
               <el-descriptions :column="2">
-                <el-descriptions-item>
-                  <template v-slot:label>
-                    <div>Đánh giá của quản lý</div>
-                  </template>
-                  {{ currentUser.review }}
-                </el-descriptions-item>
+                <!-- <el-descriptions-item> -->
+                <!-- </el-descriptions-item> -->
               </el-descriptions>
             </template>
             <!-- ------- detail ------- -->
@@ -193,7 +188,7 @@ export default {
     },
 
     isEmptyProfile() {
-      if (this.currentUser,i === {}) {
+      if (!this.currentUser.id) {
         return true;
       }
       return false;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="profile__card">
     <!-- ------------ empty ------------ -->
     <div v-if="isEmpty">
       <el-empty description="Không có dữ liệu"></el-empty>
@@ -14,7 +14,7 @@
       <div class="my-5"></div>
       <!-- ................................ -->
 
-      <div id="profile-details" class="px-2">
+      <div class="px-2">
         <slot name="detail"></slot>
       </div>
     </div>
@@ -36,7 +36,7 @@ export default {
   },
 
   mounted() {
-    common.addScrollbar4Element("#profile-details", null);
+    common.addScrollbar4Element("#profile__card", null);
   },
 };
 </script>

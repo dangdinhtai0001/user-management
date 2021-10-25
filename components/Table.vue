@@ -25,7 +25,17 @@
     <div class="my-5"></div>
     <!-- ---------------------- -->
 
-    <div class="flex justify-center ...">
+    <div class="flex justify-between px-1">
+      <div class="py-1">
+        <el-input-number
+          v-model="pagination.pageSize"
+          :min="1"
+          :max="pagination.total"
+          size="mini"
+        >
+        </el-input-number>
+      </div>
+      <!-- ---------- -->
       <el-pagination
         v-bind="$attrs"
         v-on="$listeners"
@@ -34,6 +44,13 @@
         background
       >
       </el-pagination>
+      <!-- ---------- -->
+
+      <div class="py-1">
+        {{ pagination.pageSize * (pagination.currentPage - 1) + 1 }} -
+        {{ pagination.pageSize * pagination.currentPage }} /
+        {{ pagination.total }}
+      </div>
     </div>
   </div>
 </template>
