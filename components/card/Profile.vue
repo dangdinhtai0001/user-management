@@ -7,11 +7,13 @@
     <!-- ------------ empty ------------ -->
     <div v-else>
       <div class="flex justify-center">
-        <slot name="avatar"></slot>
+        <slot name="avatar">
+          <el-avatar v-bind="$attrs" />
+        </slot>
       </div>
 
       <!-- ................................ -->
-      <div class="my-5"></div>
+      <div class="my-12"></div>
       <!-- ................................ -->
 
       <div class="px-2">

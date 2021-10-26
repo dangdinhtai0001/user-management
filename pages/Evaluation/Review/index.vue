@@ -33,13 +33,15 @@
       <!-- ========================= content-1 ========================= -->
       <template v-slot:content-1>
         <div>
-          <card-profile :isEmpty="isEmptyProfile()">
+          <card-profile
+            :isEmpty="isEmptyProfile()"
+            :size="200"
+            :src="currentUser.avatar"
+          >
             <!-- ------- avatar ------- -->
-            <template v-slot:avatar>
-              <el-avatar :size="200">
-                <img :src="currentUser.avatar" />
-              </el-avatar>
-            </template>
+            <!-- <template v-slot:avatar>
+              <el-avatar :src="currentUser.avatar" />
+            </template> -->
             <!-- ------- avatar ------- -->
             <!-- ------- detail ------- -->
             <template v-slot:detail>
@@ -68,7 +70,7 @@
               <!-- ------ -->
 
               <el-divider content-position="left">Đánh giá</el-divider>
-                  {{ currentUser.review }}
+              {{ currentUser.review }}
 
               <el-descriptions :column="2">
                 <!-- <el-descriptions-item> -->
