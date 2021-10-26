@@ -2,7 +2,7 @@
   <div id="profile__card">
     <!-- ------------ empty ------------ -->
     <div v-if="isEmpty">
-      <el-empty description="Không có dữ liệu"></el-empty>
+      <el-empty description="Không có dữ liệu" :image-size="300"></el-empty>
     </div>
     <!-- ------------ empty ------------ -->
     <div v-else>
@@ -25,6 +25,7 @@
 
 <script>
 import * as common from "~/utils/common.js";
+import { Loading } from "element-ui";
 
 export default {
   name: "card-profile",
@@ -37,8 +38,32 @@ export default {
     },
   },
 
+  data: () => ({
+    loadingInstance: null,
+  }),
+
   mounted() {
     common.addScrollbar4Element("#profile__card", null);
+  },
+
+  computed: {
+    _loadingOption() {
+      return {
+        target: document.querySelector("#profile__card"),
+        text: "Đang tải dữ liệu",
+        spinner: "el-icon-loading",
+      };
+    },
+  },
+
+  methods: {
+    startLoading() {
+      this.loadingInstance = Loading.service(this._loadingOption);
+    },
+
+    closeLoading() {
+       this.loadingInstance.close();
+    },
   },
 };
 </script>

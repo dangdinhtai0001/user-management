@@ -1,10 +1,12 @@
 <template>
   <div>
     <el-table
+      id="main__table"
       v-bind="$attrs"
-      v-on="$listeners"
-      ref="mainTable"
+      v-on="_listeners"
+      ref="main__table"
       :highlight-current-row="true"
+      stripe
     >
       <el-table-column v-if="_config.index" type="index" />
       <el-table-column v-if="_config.selection" type="selection" />
@@ -19,6 +21,10 @@
         :resizable="true"
       >
       </el-table-column>
+
+      <template v-slot:empty>
+        <el-empty description="Không có dữ liệu" :image-size="300"></el-empty>
+      </template>
     </el-table>
 
     <!-- ---------------------- -->
@@ -32,6 +38,7 @@
           :min="1"
           :max="pagination.total"
           size="mini"
+          v-on="$listeners"
         >
         </el-input-number>
       </div>
@@ -56,6 +63,8 @@
 </template>
 
 <script>
+import { Loading } from "element-ui";
+
 export default {
   props: {
     config: {
@@ -70,6 +79,15 @@ export default {
       type: Object,
       required: true,
     },
+  },
+
+  data: () => ({
+    loadingInstance: null,
+  }),
+
+  mounted() {
+    const elemnt = document.querySelector("#main__table");
+    elemnt.removeEventListener("current-change", null);
   },
 
   computed: {
@@ -90,11 +108,35 @@ export default {
 
       return defaultConfig;
     },
+
+    _loadingOption() {
+      return {
+        target: document.querySelector("#main__table"),
+        text: "Đang tải dữ liệu",
+        spinner: "el-icon-loading",
+      };
+    },
+
+    _listeners() {
+      // --- Object destructuring
+      // --- property name is dynamic
+      const { ["current-change"]: currentChange, ...listeners } =
+        this.$listeners; // exclude `current-change`-listener
+      return listeners;
+    },
   },
 
   methods: {
     refreshTable() {
-      this.$refs.mainTable.doLayout();
+      this.$refs.main__table.doLayout();
+    },
+
+    startLoading() {
+      this.loadingInstance = Loading.service(this._loadingOption);
+    },
+
+    closeLoading() {
+      this.loadingInstance.close();
     },
   },
 };

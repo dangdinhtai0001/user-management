@@ -12,7 +12,8 @@
       <!-- ========================= content-0 ========================= -->
       <template v-slot:content-0>
         <default-table
-          ref="table"
+          ref="main__table"
+          :loading="tableLoading"
           :config="tableConfig"
           style="width: 100%"
           height="75vh"
@@ -26,6 +27,7 @@
           :current-page.sync="pagination.currentPage"
           @row-click="handleChooseUser($event)"
           @current-change="initTableData"
+          @blur="initTableData"
         >
         </default-table>
       </template>
@@ -37,13 +39,9 @@
             :isEmpty="isEmptyProfile()"
             :size="200"
             :src="currentUser.avatar"
+            ref="profile__card"
           >
-            <!-- ------- avatar ------- -->
-            <!-- <template v-slot:avatar>
-              <el-avatar :src="currentUser.avatar" />
-            </template> -->
-            <!-- ------- avatar ------- -->
-            <!-- ------- detail ------- -->
+            <!-- ---------------------------- detail ---------------------------- -->
             <template v-slot:detail>
               <el-divider content-position="left">Thông tin cá nhân</el-divider>
 
@@ -72,12 +70,13 @@
               <el-divider content-position="left">Đánh giá</el-divider>
               {{ currentUser.review }}
 
-              <el-descriptions :column="2">
-                <!-- <el-descriptions-item> -->
-                <!-- </el-descriptions-item> -->
-              </el-descriptions>
+              <!-- ------ -->
+              <div class="my-3"></div>
+              <!-- ------ -->
+
+              <el-divider content-position="left">Tự đánh giá</el-divider>
             </template>
-            <!-- ------- detail ------- -->
+            <!-- ---------------------------- detail ---------------------------- -->
           </card-profile>
         </div>
       </template>
@@ -101,6 +100,7 @@ export default {
     },
     templateConfig: {},
     tableConfig: {},
+    tableLoading: false,
     // ==================
     currentUser: {},
   }),
@@ -110,7 +110,7 @@ export default {
     this.initTableCols();
     await this.initTableData();
 
-    this.$refs.table.refreshTable();
+    this.$refs.main__table.refreshTable();
     common.addScrollbar4Element(".el-table__body-wrapper", null);
   },
 
@@ -161,6 +161,10 @@ export default {
     },
 
     async initTableData() {
+      console.log(new Date());
+
+      this.$refs.main__table.startLoading();
+
       let response = {};
       await this.$axios
         .$get("/user/all", { data: this.pagination })
@@ -174,19 +178,27 @@ export default {
       this.pagination.pageSize = response.pageSize;
       this.pagination.totalPageCount = response.totalPageCount;
       this.pagination.currentPage = response.currentPage;
+
+      this.$refs.main__table.closeLoading();
     },
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     async handleChooseUser(event) {
+      this.$refs.profile__card.startLoading();
+
       const body = { ...event };
 
       let data = {};
-      await this.$axios.$get("/user", { data: body }).then(function (response) {
-        data = response;
-      });
+      await this.$axios
+        .$get("/user", { data: { body } })
+        .then(function (response) {
+          data = response;
+        });
 
       this.currentUser = { ...data };
+
+      this.$refs.profile__card.closeLoading();
     },
 
     isEmptyProfile() {
