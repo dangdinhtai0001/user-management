@@ -6,13 +6,15 @@
       </div>
     </el-divider>
 
-    <div class="text-base font-normal">
+    <div class="text-base font-normal mx-7">
       {{ content }}
     </div>
 
     <div class="my-3"></div>
 
-    <el-input placeholder="" v-model="value"></el-input>
+    <div class="mx-7">
+      <el-input placeholder="" v-model="value"></el-input>
+    </div>
   </div>
 </template>
 

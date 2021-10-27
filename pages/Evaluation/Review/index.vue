@@ -161,8 +161,6 @@ export default {
     },
 
     async initTableData() {
-      console.log(new Date());
-
       this.$refs.main__table.startLoading();
 
       let response = {};

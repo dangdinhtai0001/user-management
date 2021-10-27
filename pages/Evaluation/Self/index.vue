@@ -9,30 +9,13 @@
       <!-- ========================= content-0 ========================= -->
       <template v-slot:content-0>
         <div class="px-12">
-          <div>
-            <el-divider content-position="left">
-              <div class="font-bold text-lg">Câu hỏi 1</div>
-            </el-divider>
-
-            <div class="text-base font-normal">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </div>
-
-            <div class="my-3"></div>
-
-            <el-input placeholder="Please input"></el-input>
+          <div v-for="(question, i) in questions" :key="question.id" class="mb-12">
+            <card-question
+              :title="`Câu hỏi ` + (i + 1)"
+              :content="question.content"
+            >
+            </card-question>
           </div>
-
-          <card-question> </card-question>
         </div>
       </template>
       <!-- ========================= content-0 ========================= -->
@@ -44,10 +27,12 @@
 export default {
   data: () => ({
     templateConfig: null,
+    questions: [],
   }),
 
-  mounted() {
+  async mounted() {
     this.initTemplateConfig();
+    await this.initQuestions();
   },
 
   methods: {
@@ -59,6 +44,14 @@ export default {
         },
         contents: [{}],
       };
+    },
+    async initQuestions() {
+      let response = {};
+      await this.$axios.$get("/question").then(function (_response) {
+        response = _response;
+      });
+
+      this.questions = [...response];
     },
   },
 };
