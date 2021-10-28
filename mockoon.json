@@ -91,8 +91,22 @@
         {
           "uuid": "bba797bd-aa3d-445b-81b4-0fb6e28eeb19",
           "body": "{}",
-          "latency": 0,
+          "latency": 1000,
           "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "8524fdd9-23bf-4c74-b678-0856d21da2d8",
+          "body": "{\n  \"code\": \"_____code\",\n  \"message\": \"Đã có lỗi xảy ra!!\"\n}",
+          "latency": 0,
+          "statusCode": 404,
           "label": "",
           "headers": [],
           "filePath": "",

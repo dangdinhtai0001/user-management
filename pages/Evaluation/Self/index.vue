@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="evaluation__self__page">
     <page-default :config="templateConfig">
       <!-- ========================= title ========================= -->
       <template v-slot:title>
@@ -44,6 +44,7 @@
 <script>
 import { forEach } from "~/utils/external/lodash";
 import { Loading } from "element-ui";
+import { getDefaultFullScreenLoading } from "~/utils/common";
 
 export default {
   data: () => ({
@@ -58,7 +59,11 @@ export default {
     this.initAnswers();
   },
 
-  computed: {},
+  computed: {
+    _loadingOption() {
+      return getDefaultFullScreenLoading();
+    },
+  },
 
   methods: {
     initTemplateConfig() {
@@ -96,13 +101,38 @@ export default {
     },
 
     async handleSubmit() {
-      this.$axios
+      let loadingInstance = Loading.service(this._loadingOption);
+      let response = {};
+      let status = false;
+
+      await this.$axios
         .$post("/evaluation/self", {
           answers: this.answers,
         })
-        .then(function (response) {
-          console.log(response);
+        .then(function (_response) {
+          response = { ..._response };
+          status = true;
+        })
+        .catch(function (_response) {
+          response = { ..._response.response.data };
+          status = false;
         });
+      loadingInstance.close();
+
+      if (status) {
+        this.$notify({
+          title: "Thành công",
+          message: "Tự đánh giá thành công",
+          type: "success",
+        });
+      } else {
+        // console.log(response);
+        this.$notify({
+          title: "Có lỗi",
+          message: response.message,
+          type: "error",
+        });
+      }
     },
   },
 };

@@ -32,9 +32,8 @@ export function getDefaultContainerLoading(elementPath) {
     }
 }
 
-export function getDefaultFullScreenLoading(elementPath) {
+export function getDefaultFullScreenLoading() {
     return {
-        target: document.querySelector(elementPath),
         text: "Đang tải dữ liệu...",
         spinner: "el-icon-loading",
         lock: true,
