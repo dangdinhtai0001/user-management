@@ -7,14 +7,22 @@
       </template>
       <!-- ========================= title ========================= -->
       <!-- ========================= content-0 ========================= -->
-      <template v-slot:content-0>
-        <div class="px-12">
-          <div v-for="(question, i) in questions" :key="question.id" class="mb-12">
-            <card-question
-              :title="`Câu hỏi ` + (i + 1)"
-              :content="question.content"
-            >
-            </card-question>
+      <template v-slot:content-alone>
+        <div class="w-full flex justify-center">
+          <div class="w-3/6">
+            <!-- <el-card class="box-card" shadow="never"> -->
+              <div
+                v-for="(question, i) in questions"
+                :key="question.id"
+                class="mb-12"
+              >
+                <card-question
+                  :title="`Câu hỏi ` + (i + 1)"
+                  :content="question.content"
+                >
+                </card-question>
+              </div>
+            <!-- </el-card> -->
           </div>
         </div>
       </template>
@@ -42,7 +50,7 @@ export default {
           title: "Thông tin chi tiết",
           visible: false,
         },
-        contents: [{}],
+        contents: [],
       };
     },
     async initQuestions() {

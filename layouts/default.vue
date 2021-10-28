@@ -13,7 +13,10 @@
   >
     <Sidebar style="height: 100vh" />
     <div class="main-container">
-      <el-container direction="vertical" :style="{ 'padding-top': paddingTop }">
+      <el-container
+        direction="vertical"
+        :style="{ 'padding-top': paddingTop}"
+      >
         <Navbar ref="navbar" :has-tags-view="hasTagsView" />
         <nuxt />
         <right-panel />
