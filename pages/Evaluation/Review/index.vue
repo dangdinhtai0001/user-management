@@ -16,7 +16,7 @@
           :loading="tableLoading"
           :config="tableConfig"
           style="width: 100%"
-          height="75vh"
+          height="70vh"
           :data="tableData"
           :border="true"
           :tableCols="tableCols"

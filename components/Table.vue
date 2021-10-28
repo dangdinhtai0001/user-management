@@ -64,6 +64,7 @@
 
 <script>
 import { Loading } from "element-ui";
+import { getDefaultContainerLoading } from "~/utils/common";
 
 export default {
   props: {
@@ -110,11 +111,7 @@ export default {
     },
 
     _loadingOption() {
-      return {
-        target: document.querySelector("#main__table"),
-        text: "Đang tải dữ liệu",
-        spinner: "el-icon-loading",
-      };
+      return getDefaultContainerLoading("#main__table");
     },
 
     _listeners() {

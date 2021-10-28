@@ -13,7 +13,12 @@
     <div class="my-3"></div>
 
     <div class="mx-7">
-      <el-input placeholder="" v-model="value"></el-input>
+      <el-input
+        type="textarea"
+        :rows="rows"
+        v-model="answer"
+        @blur="handleAnswerBlur"
+      ></el-input>
     </div>
   </div>
 </template>
@@ -29,12 +34,30 @@ export default {
       type: String,
       default: "",
     },
+    rows: {
+      type: Number,
+      default: 3,
+    },
     type: {
       type: String,
       default: "text",
     },
-    value: {
+    questionId: {
+      type: String,
       required: true,
+    },
+  },
+
+  data: () => ({
+    answer: "",
+  }),
+
+  methods: {
+    handleAnswerBlur() {
+      this.$emit("__answer", {
+        questionId: this.questionId,
+        content: this.answer,
+      });
     },
   },
 };

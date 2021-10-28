@@ -24,7 +24,10 @@
 </template>
 
 <script>
-import * as common from "~/utils/common.js";
+import {
+  getDefaultContainerLoading,
+  addScrollbar4Element,
+} from "~/utils/common.js";
 import { Loading } from "element-ui";
 
 export default {
@@ -43,16 +46,12 @@ export default {
   }),
 
   mounted() {
-    common.addScrollbar4Element("#profile__card", null);
+    addScrollbar4Element("#profile__card", null);
   },
 
   computed: {
     _loadingOption() {
-      return {
-        target: document.querySelector("#profile__card"),
-        text: "Đang tải dữ liệu",
-        spinner: "el-icon-loading",
-      };
+      return getDefaultContainerLoading("#profile__card");
     },
   },
 
@@ -62,7 +61,7 @@ export default {
     },
 
     closeLoading() {
-       this.loadingInstance.close();
+      this.loadingInstance.close();
     },
   },
 };
